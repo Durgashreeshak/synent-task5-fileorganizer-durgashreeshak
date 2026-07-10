@@ -22,10 +22,16 @@ def select_folder():
     root = Tk()
     root.withdraw()
 
+    # Keep the folder dialog in front of other windows
+    root.attributes("-topmost", True)
+
     # Open folder selection dialog
     folder_path = filedialog.askdirectory(
         title="Select a Folder to Organize"
     )
+
+    # Close the hidden Tkinter window
+    root.destroy()
 
     return folder_path
 
