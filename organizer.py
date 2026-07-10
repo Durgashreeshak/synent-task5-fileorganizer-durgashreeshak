@@ -57,6 +57,19 @@ def categorize_file(filename):
 
     return "Others"
 
+def create_category_folders(folder_path):
+    """
+    Creates all required category folders.
+    If a folder already exists, it won't raise an error.
+    """
+
+    categories = list(FILE_CATEGORIES.keys())
+    categories.append("Others")
+
+    for category in categories:
+        folder = os.path.join(folder_path, category)
+        os.makedirs(folder, exist_ok=True)
+
 
 def main():
     folder = select_folder()
@@ -65,6 +78,8 @@ def main():
         print(f"\nSelected Folder:\n{folder}")
 
         files = scan_files(folder)
+
+        create_category_folders(folder)
 
         print("\nFiles Found:")
         print("-" * 30)
