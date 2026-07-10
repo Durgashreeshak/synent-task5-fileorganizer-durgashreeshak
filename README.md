@@ -1,35 +1,53 @@
 # 📂 File Organizer
 
-A Python-based File Organizer that automatically sorts files into categorized folders such as Documents, Images, Videos, Audio, Archives, Programs, Code, and Others.
+A Python-based File Organizer that automatically organizes files into category folders based on their file extensions.
 
-This project was developed as **Task 5 – File Organizer** for the **Synent Technologies Python Development Internship**.
+This project was developed as **Task 5 – File Organizer** for the **Synent Technologies Python Development Internship Program**.
 
 ---
 
-## 🚀 Features
+## 📌 Project Overview
 
-- Select any folder using a graphical folder picker.
-- Automatically detect file types.
-- Create category folders if they do not already exist.
-- Move files into the appropriate folders.
-- Organize files into:
-  - Documents
-  - Images
-  - Videos
-  - Audio
-  - Archives
-  - Programs
-  - Code
-  - Others
-- Display the number of processed files.
+The application allows the user to select any folder using a graphical folder picker. It automatically detects each file's type, creates the required category folders (if they do not already exist), and moves every file into its appropriate folder.
+
+The project is built using Python's built-in **os**, **shutil**, and **tkinter** modules.
+
+---
+
+## ✨ Features
+
+- Graphical folder selection using Tkinter
+- Automatic file scanning
+- File categorization based on extension
+- Automatic creation of category folders
+- Automatic file movement
+- Supports multiple file categories
+- Handles unsupported file types by placing them in an **Others** folder
+- Displays processing status in the terminal
+- Simple and easy-to-understand code structure
+
+---
+
+## 📂 Supported Categories
+
+| Category | Extensions |
+|----------|------------|
+| Documents | .pdf, .doc, .docx, .txt, .ppt, .pptx, .xls, .xlsx |
+| Images | .jpg, .jpeg, .png, .gif, .bmp, .webp |
+| Videos | .mp4, .mkv, .avi, .mov, .wmv |
+| Audio | .mp3, .wav, .aac, .flac |
+| Archives | .zip, .rar, .7z, .tar, .gz |
+| Programs | .exe, .msi, .bat |
+| Code | .py, .java, .c, .cpp, .html, .css, .js, .json, .xml |
+| Others | Unsupported file types |
 
 ---
 
 ## 🛠 Technologies Used
 
 - Python 3
-- os module
-- shutil module
+- os
+- shutil
 - tkinter
 
 ---
@@ -43,32 +61,48 @@ synent-task5-fileorganizer-durgashreeshak/
 ├── README.md
 ├── requirements.txt
 ├── sample_files/
-├── sample_files_original/
 ├── screenshots/
 └── .gitignore
 ```
 
 ---
 
+## ▶️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Durgashreeshak/synent-task5-fileorganizer-durgashreeshak.git
+```
+
+Move into the project directory:
+
+```bash
+cd synent-task5-fileorganizer-durgashreeshak
+```
+
+---
+
 ## ▶️ How to Run
 
-1. Clone the repository.
-
-2. Open the project in Visual Studio Code.
-
-3. Run:
+Run the application:
 
 ```bash
 python organizer.py
 ```
 
-4. Select the folder you want to organize.
+1. A folder selection dialog will appear.
+2. Select the folder you want to organize.
+3. The application scans the files.
+4. Category folders are created automatically.
+5. Files are moved into their respective folders.
+6. The terminal displays the processing summary.
 
-5. The files will automatically be sorted into category folders.
+> **Note:** For testing, it is recommended to use a copy of the sample files instead of modifying the original `sample_files` folder.
 
 ---
 
-## 📸 Sample Output
+## 📷 Sample Output
 
 ```text
 Moving Files:
@@ -83,12 +117,37 @@ Total Files Processed: 16
 
 ---
 
-## 💡 Future Improvements
+## 📸 Screenshots
+
+Project screenshots are available in the **screenshots/** folder.
+
+Example screenshots:
+
+- Folder Selection
+- Before Organizing Files
+- After Organizing Files
+- Terminal Output
+
+---
+
+## 🎥 Demo Video
+
+Demo video link:
+
+```
+Add your YouTube or LinkedIn video link here after recording.
+```
+
+---
+
+## 🚀 Future Improvements
 
 - Duplicate file handling
 - Recursive folder organization
 - Custom user-defined categories
-- Drag-and-drop interface
+- Drag-and-drop support
+- Progress bar for large folders
+- User-defined file categories
 
 ---
 
@@ -96,6 +155,15 @@ Total Files Processed: 16
 
 **Durgashreesha K**
 
-Artificial Intelligence & Machine Learning Engineering Student
+B.E. Artificial Intelligence & Machine Learning
 
 Vivekananda College of Engineering and Technology, Puttur
+
+GitHub:
+https://github.com/Durgashreeshak
+
+---
+
+## 📄 License
+
+This project was created for educational purposes as part of the **Synent Technologies Python Development Internship Program**.
