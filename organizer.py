@@ -1,4 +1,5 @@
 import os
+import shutil
 from tkinter import Tk
 from tkinter import filedialog
 
@@ -70,6 +71,25 @@ def create_category_folders(folder_path):
         folder = os.path.join(folder_path, category)
         os.makedirs(folder, exist_ok=True)
 
+def move_files(folder_path, files):
+    """
+    Moves files into their respective category folders.
+    """
+
+    print("\nMoving Files:")
+    print("-" * 30)
+
+    for file in files:
+
+        category = categorize_file(file)
+
+        source_path = os.path.join(folder_path, file)
+
+        destination_path = os.path.join(folder_path, category, file)
+
+        shutil.move(source_path, destination_path)
+
+        print(f"✔ {file}  -->  {category}")
 
 def main():
     folder = select_folder()
@@ -81,14 +101,9 @@ def main():
 
         create_category_folders(folder)
 
-        print("\nFiles Found:")
-        print("-" * 30)
+        move_files(folder, files)
 
-        for file in files:
-            category = categorize_file(file)
-            print(f"{file}  -->  {category}")
-
-        print(f"\nTotal Files: {len(files)}")
+        print(f"\nTotal Files Processed: {len(files)}")
 
     else:
         print("\nNo folder selected.")
